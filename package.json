@@ -7,7 +7,8 @@
     "rfile": "~1.0.0",
     "ruglify": "~1.0.0",
     "through": "~2.3.4",
-    "uglify-js": "~2.4.0"
+    "uglify-js": "~3.14.3",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "linify": "~1.0.1",
@@ -15,19 +16,23 @@
   },
   "scripts": {
     "test": "mocha -R spec",
-    "prepublish": "linify transform bin"
+    "prepublish": "npm run snyk-protect && linify transform bin",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/ForbesLindesay/umd.git"
   },
-  "contributors":[ {
-    "name": "ForbesLindesay"
-  },
-  {
-    "name": "Jesús Leganés Combarro 'piranna'",
-    "email": "piranna@gmail.com",
-    "web": "http://pirannafs.blogspot.com"
-  }],
-  "license": "MIT"
+  "contributors": [
+    {
+      "name": "ForbesLindesay"
+    },
+    {
+      "name": "Jesús Leganés Combarro 'piranna'",
+      "email": "piranna@gmail.com",
+      "web": "http://pirannafs.blogspot.com"
+    }
+  ],
+  "license": "MIT",
+  "snyk": true
 }
